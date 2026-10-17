@@ -1,0 +1,276 @@
+A1: 3 1 8 -> Correct
+
+A2: -3 -> wrong (Ans: -4)
+
+A3: abababc -> Correct
+
+A4: yth nohtyp -> Correct
+
+A5: False True True -> Correct
+
+A6: guest 5 -> Correct
+
+A7: 4 12 5.0
+
+A8: <class 'int'> <class 'tuple'> -> Correct
+
+A9: [1,2,3] -> Correct
+
+A10: [1,2,3] -> wrong
+"""
+Output: None
+
+.sort() sorts the list in place, so nums becomes [1, 2, 3].
+It returns None, so x is None.
+"""
+
+A11: 3 -> correct
+
+A12: AttributeError True False -> wrong (Ans: 0 True False)
+
+A13: (1, [2,3,4]) -> correct
+
+A14: [1,2,3,"a", "b"] -> wrong (Ans: [(1, 'a'), (2, 'b')])
+
+A15:  -> wrong
+"""
+Output: 5 4
+
+len("café") counts characters: c, a, f, é → 4
+.encode("utf-8") turns the text into bytes. In UTF-8, é takes 2 bytes, so the total is 1 + 1 + 1 + 2 = 5
+"""
+
+
+
+
+B1: Parameter is the variable in the function  and arguments are the values passed to the function
+B2: set(1,2,4)
+B3: it refers to the file name, the file name is becomes __main__ when the file os run directly in the terminal, but comes the name given when imported which is not "__main__"
+B4: Mutable: list, dict   Immutable: Tuble and set
+B5: list.sort() does not return any value but this sorted(list) returns the value
+B6: DON'T KNOW
+B7: == to asset if two values are the same but is is should to asset if a variable or values is or not a None
+B8: finally does a clean up for the block
+B9: No, the type hint is not enforce by python my make sure you assign the right values to the varables with the type hint but dont stop a code from running
+B10:encoding="utf-8": to make sure teh file use the utf-8 becuase, its not specified the code uses the systems encoding
+
+
+
+C1: 10
+
+C2:
+1
+2
+
+C3: Will always be True, because whatever value is seen as truthy value
+
+C4: [1, 3, 5]
+
+C5: Does not catch any error, becuase not Exception was specified and not print was issued
+
+
+
+
+-------------- NOTES ---------------
+
+
+PYTHON FUNDAMENTALS TEST: WRONG ANSWERS, CORRECT ANSWERS, AND REASONS
+=====================================================================
+
+Correct ones (A1, A3, A5, A6, A8, A9, A11, A13, B1, B9, B10, C3) are left out.
+
+
+SECTION A
+---------
+
+A2: print(-7 // 2)
+  You wrote : -3
+  Correct   : -4
+  Why       : // is floor division. It rounds DOWN toward negative infinity,
+              not toward zero. -7 / 2 is -3.5, and rounding down gives -4.
+              (7 // 2 gives 3 because 3.5 rounds down to 3.)
+
+A4: print("Python"[1:4], "Python"[::-1])
+  You wrote : yth nohtyp
+  Correct   : yth nohtyP
+  Why       : Reversing keeps each character as it is. The capital P from the
+              start of the word is now at the end, and it stays capital.
+
+A7: print(int(3.9), int("12"), float(5))
+  You wrote : 4 12 5.0
+  Correct   : 3 12 5.0
+  Why       : int() CUTS OFF the decimal part. It does not round.
+              Use round(3.9) if you want 4.
+
+A10: x = nums.sort(); print(x)
+  You wrote : [1, 2, 3]
+  Correct   : None
+  Why       : .sort() changes the list in place and returns None. So x is
+              None. The list nums is sorted, but x is not the list.
+
+A12: print(d.get("b", 0), "a" in d, 1 in d)
+  You wrote : AttributeError True False
+  Correct   : 0 True False
+  Why       : .get() is a real dict method. When the key "b" is missing, it
+              returns the default you gave (0) instead of raising an error.
+              The other two were right: "a" is a key, 1 is not
+              (in checks keys, not values).
+
+A14: print(list(zip([1, 2, 3], ["a", "b"])))
+  You wrote : [1, 2, 3, "a", "b"]
+  Correct   : [(1, 'a'), (2, 'b')]
+  Why       : zip pairs items by position and gives TUPLES. It does not join
+              the lists together. It also stops at the shortest list, so the
+              3 is dropped.
+
+A15: print(len("café".encode("utf-8")), len("café"))
+  You wrote : (blank)
+  Correct   : 5 4
+  Why       : "café" has 4 characters. Encoded to UTF-8 bytes, é takes 2 bytes
+              and the other three letters take 1 each: 1 + 1 + 1 + 2 = 5.
+
+
+SECTION B
+---------
+
+B2: Why does {} not make an empty set? What do you write instead?
+  You wrote : set(1,2,4)
+  Correct   : {} makes an empty DICT, because dicts use curly brackets too.
+              Write set() for an empty set.
+  Why       : You did not answer the "why", and set(1, 2, 4) is invalid.
+              set() takes ONE iterable, like set([1, 2, 4]).
+
+B3: What does if __name__ == "__main__": do? (partly right)
+  You wrote : The file name becomes __main__ when run directly, and something
+              else when imported.
+  Correct   : It makes a block run ONLY when the file is run directly, and
+              skips it when the file is imported.
+  Why       : Your explanation of __name__ is right. You missed the main
+              point, which is what the if achieves.
+
+B4: Name two mutable and two immutable types.
+  You wrote : Mutable: list, dict. Immutable: tuple, set.
+  Correct   : Mutable: list, dict, set. Immutable: int, str, tuple.
+  Why       : Sets can be changed with add and remove, so they are mutable.
+              (The immutable version is called frozenset.)
+
+B5: list.sort() vs sorted(list) (partly right)
+  You wrote : sort() returns nothing, sorted() returns a value.
+  Correct   : sort() changes the original list and returns None.
+              sorted() leaves the original alone and returns a NEW sorted list.
+  Why       : You had half of it. The other half is what happens to the
+              original.
+
+B6: When to use .get() instead of []?
+  You wrote : Don't know.
+  Correct   : Use .get() when the key MIGHT NOT EXIST.
+  Why       : d["x"] raises a KeyError if x is missing. d.get("x") returns
+              None, or a default you choose: d.get("x", 0).
+
+B7: == vs is (partly right)
+  You wrote : == compares values, is checks for None.
+  Correct   : == checks if values are equal. is checks if two names point to
+              the SAME OBJECT in memory.
+  Why       : Checking None is the most common use of is, but it is not its
+              meaning. Example: [1, 2] == [1, 2] is True, but
+              [1, 2] is [1, 2] is False (two separate lists).
+
+B8: What does finally do? (partly right)
+  You wrote : Cleans up for the block.
+  Correct   : It runs ALWAYS, whether or not an error happened. That is why it
+              is used for cleanup.
+  Why       : "Always" is the key word, even after a return or an uncaught
+              error.
+
+
+SECTION C
+---------
+
+C1:
+  def get_total(a, b):
+      print(a + b)
+
+  result = get_total(2, 3)
+  print(result * 2)
+
+  You wrote : 10
+  Correct   : It prints 5, then crashes with TypeError.
+  Why       : get_total uses print, not return, so it gives back None.
+              Then None * 2 is a TypeError.
+  Fix       : Change print(a + b) to return a + b.
+
+C2:
+  def add_item(item, items=[]):
+      items.append(item)
+      return items
+
+  print(add_item(1))
+  print(add_item(2))
+
+  You wrote : 1 and 2
+  Correct   : [1] then [1, 2]
+  Why       : The function returns the list, not the item. The default list
+              [] is created ONCE and reused on every call, so the second call
+              adds to the same list.
+  Fix       :
+      def add_item(item, items=None):
+          if items is None:
+              items = []
+          items.append(item)
+          return items
+
+C4:
+  nums = [1, 2, 3, 4, 5, 6]
+  for n in nums:
+      if n % 2 == 0:
+          nums.remove(n)
+
+  You wrote : [1, 3, 5]
+  Correct   : Your output is right, but it is a lucky result.
+  Why       : The loop skips items as the list shrinks. It works here only
+              because the evens happen to line up that way. Try
+              [2, 4, 6, 8]: it leaves [4, 8], not [].
+  Fix       : Build a new list instead:
+              nums = [n for n in nums if n % 2 != 0]
+
+C5:
+  try:
+      age = int(input("Age: "))
+  except:
+      pass
+
+  You wrote : Does not catch any error because no exception was specified.
+  Correct   : It catches EVERY error, and hides all of them.
+  Why       : A bare except: catches everything, including typos and Ctrl+C.
+              With pass, nothing is printed, so the program fails silently.
+              Your reasoning was backwards, so this should be marked lower
+              than the 3/4 I gave earlier.
+  Fix       :
+      try:
+          age = int(input("Age: "))
+      except ValueError:
+          print("Enter a number")
+
+
+SCORE
+-----
+Section A : 17 / 30
+Section B : 11 / 20
+Section C : about 9 / 20 (after the C5 correction)
+Section D : 30 / 30
+Total     : about 66 / 100
+
+
+THINGS TO REMEMBER
+------------------
+1. -7 // 2 is -4 (floor division rounds down). int(3.9) is 3 (truncates).
+2. list.sort() returns None.
+3. d.get("b", 0) returns the default 0, no error.
+4. zip gives tuples, not a flat list.
+5. len("café".encode("utf-8")) is 5, but len("café") is 4.
+6. No return means the function gives None.
+7. Mutable default arguments are shared between calls.
+8. Sets are mutable. {} is an empty dict, use set().
+9. is means same object in memory, == means same value.
+10. Never remove from a list while looping over it.
+11. A bare except: hides every error. Catch specific ones.
