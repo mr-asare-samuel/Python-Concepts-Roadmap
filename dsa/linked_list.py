@@ -1,10 +1,12 @@
 class Node:
+    """ Class for creating new instances of a node """
     def __init__(self, data):
         self.data = data
         self.next = None
 
 
 class LinkedList:
+    """ Class for handling the linked list itself and its methods """
     def __init__(self):
         self.head = None
 
@@ -39,7 +41,7 @@ class LinkedList:
                 else:
                     previous.next = current.next
                 return
-                
+
             previous = current
             current = current.next
 
@@ -61,6 +63,7 @@ ll.add_first(34)
 ll.add_first(20)
 ll.add_first(10)
 ll.add_last(100)
+ll.remove(20)
 
 print(ll.ll_list())
 print(type(ll))
