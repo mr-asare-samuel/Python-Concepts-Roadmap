@@ -468,3 +468,11 @@ match point:
         print(f"On x-axis at {x}")
     case (x, y):
         print(f"Point at {x}, {y}")
+
+
+
+numbers = [34,5,62,342,53]
+numbers.sort()
+print(numbers) # does not return the sorted, it works on the list directly
+
+print(sorted(numbers)) # returns the sorted list
