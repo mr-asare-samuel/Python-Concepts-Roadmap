@@ -1,12 +1,28 @@
 class Node:
-    """ Class for creating new instances of a node """
+    """
+    A single node in a singly linked list.
+
+    Attributes:
+        data: The value stored in the node.
+        next (Node | None): Reference to the next node in the list,
+            or None if this is the last node.
+    """
     def __init__(self, data):
         self.data = data
         self.next = None
 
 
 class LinkedList:
-    """ Class for handling the linked list itself and its methods """
+    """
+    A singly linked list.
+
+    Maintains a reference to the head node and supports inserting
+    at the front or back, removing by value, and listing all values.
+
+    Attributes:
+        head (Node | None): The first node in the list, or None if
+            the list is empty.
+    """
     def __init__(self):
         self.head = None
 
