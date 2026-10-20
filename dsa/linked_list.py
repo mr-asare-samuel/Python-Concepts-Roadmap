@@ -63,7 +63,14 @@ ll.add_first(34)
 ll.add_first(20)
 ll.add_first(10)
 ll.add_last(100)
+ll.add_last(10)
+ll.add_last(20)
+ll.add_first(5)
 ll.remove(20)
+
+print(ll.ll_list())
+
+ll.remove(10)
 
 print(ll.ll_list())
 print(type(ll))
