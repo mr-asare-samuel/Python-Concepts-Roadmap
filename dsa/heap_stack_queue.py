@@ -37,6 +37,22 @@ class Stack:
         return len(self.items)
 
 
+# ------------------
+
+from collections import deque
+
+stk = deque()
+stk.append("first")
+stk.append(56)
+stk.append(7)
+stk.append("last")
+
+print("Stack",stk)
+
+stk.pop()
+print(stk)
+
+
 # QUEUE
 
 """
@@ -80,6 +96,22 @@ class Queue:
     def __len__(self):
         return len(self.items)
 
+
+# ---------------
+from collections import deque
+
+q = deque()
+
+q.appendleft("start")
+q.appendleft(15)
+q.appendleft(12)
+q.appendleft("end")
+
+print("Queue", q)
+
+q.pop()
+
+print(q)
 
 #Heap
 
