@@ -123,3 +123,46 @@ print(sum_nested([1, 2, [3, 4], [5, 6]]))
 
 if __name__ == "__main__":
     print(fibonacci(7))
+
+
+
+def sum_list(data):
+    if len(data) == 1:
+        return data[0]
+    else:
+        return data[0] + sum_list(data[1:])
+        
+
+print(sum_list([2, 4, 5, 6, 7]))
+
+
+def factorial(number):
+    if number == 1:
+        return number
+    return number * factorial(number - 1)
+
+
+print(factorial(5))
+
+
+def sum_series(n):
+    if n < 1:
+        return 0
+
+    return n + sum_series(n - 2)
+
+print(sum_series(6))
+
+
+def sum_even(data_list):
+    if len(data_list) == 0:
+        return 0
+
+    if data_list[0] % 2 == 0:
+        return data_list[0] + sum_even(data_list[1:])
+
+    return sum_even(data_list[1:])
+
+
+print(sum_even([2, 5, 6]))
+        
